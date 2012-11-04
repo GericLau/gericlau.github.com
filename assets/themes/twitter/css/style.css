@@ -68,4 +68,12 @@ html, body {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-	
+
+/* add the follow button layout */
+.follow {
+	margin: 10px 5px;
+}
+
+#no-padding {
+	padding: 0;
+}
