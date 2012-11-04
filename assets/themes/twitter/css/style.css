@@ -68,7 +68,7 @@ html, body {
 	border:1px solid #4C964D;
 	color:#FFF;
 }
-
+/* The following section writed by Geric Lau */
 /* add the follow button layout */
 .follow {
 	margin: 10px 5px;
@@ -76,4 +76,32 @@ html, body {
 
 #no-padding {
 	padding: 0;
+}
+
+/* layout of the content in the index page */
+.post {
+	border: 3px solid #E5E5E5;
+	border-radius: 6px;
+	margin-bottom: 15px;
+}
+
+.post-title {
+	background-color: #EED;
+	border-bottom: 2px solid #E5E5E5;
+	padding: 10px;
+}
+
+.post-content {
+	padding: 15px;
+}
+
+/* layout of the Tag box */
+#sidebar {
+	float: left;
+	width: 250px;
+}
+
+#sidebar .tag_box {
+    border: 3px solid #E5E5E5;
+    border-radius: 6px 6px 6px 6px;
 }
