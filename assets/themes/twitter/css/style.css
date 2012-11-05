@@ -105,3 +105,15 @@ html, body {
     border: 3px solid #E5E5E5;
     border-radius: 6px 6px 6px 6px;
 }
+
+/* layout of the cover image ================================ */
+#cover {
+	margin-bottom: 3em;
+	text-align: center;
+}
+
+p {
+	font-size: 16px;
+	line-height: 25px;
+	margin-top: 15px;
+}
