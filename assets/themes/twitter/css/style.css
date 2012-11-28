@@ -69,6 +69,13 @@ html, body {
 	color:#FFF;
 }
 /* The following section writed by Geric Lau */
+
+/* icon layout */
+#ruby-icon {
+	float: left;
+	height: 40px;
+	width: 40px;
+}
 /* add the follow button layout */
 .follow {
 	margin: 10px 5px;
