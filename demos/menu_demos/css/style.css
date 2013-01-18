@@ -1,86 +1,149 @@
-* {
-  box-sizing: border-box;
+/*  ========================================= RESET =========================================
+  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+  html5doctor.com/html-5-reset-stylesheet/
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+article, aside, figure, footer, header, 
+hgroup, nav, section { display:block; }
+nav ul { list-style:none; }
+blockquote, q { quotes:none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+input, select { vertical-align:middle; }
+pre,
+code,
+kbd,
+samp { font-family: monospace, sans-serif; }
+html { overflow-y: scroll; }
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+/* END RESET CSS */
+
+/*
+============================================
+    BASE
+============================================
+*/
+
+body { font-size: 1.25em; font-family: sans-serif; color: #444444; line-height: 1.618em; }
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl, address { padding: 10px 5px; margin: 0 10px; }
+h1 { font-size: 36px; }
+h2 { font-size: 24px; }
+p, ul, ol, dl, address { font-size: 16px; max-width: 630px; }
+h1, h2, h3, h4, h5, h6, p, ol, ul, dl, address { line-height: 1.618em; }
+a { color: #0fcaf2; text-decoration: none; }
+.wrapper { width: 100%; max-width: 1000px; margin: 0 auto; }
+aside { float: right; width: 30%; }
+footer p { font-size: .65em }
+
+/* self clearing floats */
+.group:after,.lastUnit:after {clear:both;display:block;visibility:hidden;overflow:hidden;height:0 !important;line-height:0;font-size:xx-large;content:" x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x ";}
+.group{*zoom:1;}
+
+/*
+============================================
+    THE GOODS
+============================================
+*/
+
+.navheader {
+  font-size: 16px;
+  color: #fff;
+  background: #000;
 }
 
-html, body { min-height: 100%; }
-a { text-decoration: none; }
-
-.main-header {
-  background: linear-gradient(#3F94BF, #246485);
-  padding: 5px;
-  text-align: center;
-  color: white;
-  text-shadow: #222 0px -1px 1px;
-  position: fixed;
-  width: 100%;
-  left: 0;
-  transition: all 0.3s ease;
-  a {
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    color: white;
-    font-size: 32px;
-  }
-}
-
-.page-wrap {
-  float: right;
-  width: 100%;
-  transition: width 0.3s ease;
-}
-
-.main-nav {
-  position: fixed;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background: #3B3B3B;
-  overflow: hidden;
-  transition: width 0.3s ease;
-  a {
-    display: block;
-    background: linear-gradient(#3E3E3E, #383838);
-    border-top: 1px solid #484848;
-    border-bottom: 1px solid #2E2E2E;
-    color: white;
-    padding: 15px;
-    &:hover, &:focus {
-      background: linear-gradient(#484848, #383838);
-    }
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 34px;
-    background: linear-gradient(left, rgba(black, 0), rgba(black, 0.4));
-  }
-}
-
-.content {
-  padding: 100px 20px 20px 20px;
-}
-
-.close-menu {
+.navigation li ul {
   display: none;
+  cursor: pointer;
+  width: 70px;
 }
 
-#main-nav:target {
-  width: 20%;
+.navigation li.open ul {
+  display: block;
 }
-#main-nav:target + .page-wrap {
-  width: 80%;
-  .open-menu {
-     display: none; 
-  }
-  .close-menu {
-     display: block;
-  }
-  .main-header {
-    width: 80%;
-    left: 20%;
-  }
+
+.caret {
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  background:url("../images/dropdown-arrows.png") no-repeat scroll -7px -16px transparent
 }
+
+.slide-trigger {
+  
+  display: none; /* need this */
+  border: 1px solid #CCCCCC;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.slide-trigger span {
+  background: url("../images/iconbar.png");
+  display: block;
+  float: right;
+  margin: 3px;
+  height: 17px;
+  width: 24px;
+}
+
+.navigation {
+  max-width: none;
+  background: #000;
+  padding: 0;
+}
+.navigation li {
+  float: left;
+}
+.navigation li a {
+  display: block;
+  color: #fff;
+  padding: 10px;
+}
+.navigation li a:hover { background: #0fcaf2; }
+
+
+/*
+============================================
+    RESPONSIVENESS
+============================================
+*/
+
+@media only screen and (max-width: 560px) {
+  .slide-trigger { display: block; }
+    .no-js .slide-trigger { display: none; }
+  .navigation { display: none; }
+    .no-js .navigation { display: block; }
+  .navigation { margin: 0 15px; }
+  .navigation li { float: none; }
+  .navigation li a { border-bottom: 1px solid #fff; }
+}
+
